@@ -1,0 +1,342 @@
+name: offset
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+    Analyze_Guidance:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 22
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Analyze_Guidance
+          run: |
+            echo "Starting Analyze_Guidance suite..."
+            uptime
+            sleep 15m
+            echo "Completed successfully!"
+  
+    Build_Books:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 24
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Build_Books
+          run: |
+            echo "Starting Build_Books suite..."
+            history
+            sleep 14m
+            echo "Completed successfully!"
+  
+    Test_Books_x64:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.9'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Test_Books_x64
+          run: |
+            echo "Starting Test_Books_x64 suite..."
+            date
+            sleep 19m
+            echo "Completed successfully!"
+  
+    Verify_CreditCardAccount_MacOS:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.9'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Verify_CreditCardAccount_MacOS
+          run: |
+            echo "Starting Verify_CreditCardAccount_MacOS suite..."
+            id
+            sleep 18m
+            echo "Completed successfully!"
+  
+    Format_Microchip_Linux:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 24
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Format_Microchip_Linux
+          run: |
+            echo "Starting Format_Microchip_Linux suite..."
+            groups
+            sleep 16m
+            echo "Completed successfully!"
+  
+    Test_Tools:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.9'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Test_Tools
+          run: |
+            echo "Starting Test_Tools suite..."
+            who
+            sleep 20m
+            echo "Completed successfully!"
+  
+    Compile_AutoLoanAccount_API:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Compile_AutoLoanAccount_API
+          run: |
+            echo "Starting Compile_AutoLoanAccount_API suite..."
+            who
+            sleep 12m
+            echo "Completed successfully!"
+  
+    Audit_Health_Staging:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.10'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Audit_Health_Staging
+          run: |
+            echo "Starting Audit_Health_Staging suite..."
+            hostname
+            sleep 13m
+            echo "Completed successfully!"
+  
+    Review_Swim_E2E:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 22
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Review_Swim_E2E
+          run: |
+            echo "Starting Review_Swim_E2E suite..."
+            pwd
+            sleep 18m
+            echo "Completed successfully!"
+  
+    Format_HomeLoanAccount_E2E:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.9'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Format_HomeLoanAccount_E2E
+          run: |
+            echo "Starting Format_HomeLoanAccount_E2E suite..."
+            uptime
+            sleep 20m
+            echo "Completed successfully!"
+  
+    Review_CreditCardAccount_v1:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.11'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Review_CreditCardAccount_v1
+          run: |
+            echo "Starting Review_CreditCardAccount_v1 suite..."
+            history
+            sleep 13m
+            echo "Completed successfully!"
+  
+    Lint_Jewelry_v2:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.11'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Lint_Jewelry_v2
+          run: |
+            echo "Starting Lint_Jewelry_v2 suite..."
+            whoami
+            sleep 11m
+            echo "Completed successfully!"
+  
+    Format_Fishery_Linux:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.10'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Format_Fishery_Linux
+          run: |
+            echo "Starting Format_Fishery_Linux suite..."
+            date
+            sleep 10m
+            echo "Completed successfully!"
+  
+    Compile_Card_Prod:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Compile_Card_Prod
+          run: |
+            echo "Starting Compile_Card_Prod suite..."
+            pwd
+            sleep 15m
+            echo "Completed successfully!"
+  
+    Analyze_Representation:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Analyze_Representation
+          run: |
+            echo "Starting Analyze_Representation suite..."
+            groups
+            sleep 16m
+            echo "Completed successfully!"
+  
+    Audit_Alarm:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.11'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Audit_Alarm
+          run: |
+            echo "Starting Audit_Alarm suite..."
+            ls
+            sleep 17m
+            echo "Completed successfully!"
+  
