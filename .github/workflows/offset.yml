@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-    Analyze_Harddrive:
+    Deploy_Grocery:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout Repository
@@ -18,329 +18,14 @@ jobs:
         - name: Install Dependencies
           run: pip install -r requirements.txt || true
           
-        - name: Run Analyze_Harddrive
+        - name: Run Deploy_Grocery
           run: |
-            echo "Starting Analyze_Harddrive suite..."
-            date
-            sleep 19m
-            echo "Completed successfully!"
-  
-    Build_Driver:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 22
-          
-        - name: Install Dependencies
-          run: npm ci || npm install
-          
-        - name: Run Build_Driver
-          run: |
-            echo "Starting Build_Driver suite..."
-            ps
-            sleep 13m
-            echo "Completed successfully!"
-  
-    Verify_Feed_Staging:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.10'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Verify_Feed_Staging
-          run: |
-            echo "Starting Verify_Feed_Staging suite..."
-            hostname
-            sleep 10m
-            echo "Completed successfully!"
-  
-    Compile_Stay_x64:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.9'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Compile_Stay_x64
-          run: |
-            echo "Starting Compile_Stay_x64 suite..."
-            ps
-            sleep 12m
-            echo "Completed successfully!"
-  
-    Verify_Armoire:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.9'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Verify_Armoire
-          run: |
-            echo "Starting Verify_Armoire suite..."
-            date
-            sleep 14m
-            echo "Completed successfully!"
-  
-    Analyze_Home:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.9'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Analyze_Home
-          run: |
-            echo "Starting Analyze_Home suite..."
-            df
+            echo "Starting Deploy_Grocery suite..."
+            uptime
             sleep 20m
             echo "Completed successfully!"
   
-    Analyze_Carnival:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.8'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Analyze_Carnival
-          run: |
-            echo "Starting Analyze_Carnival suite..."
-            ls
-            sleep 19m
-            echo "Completed successfully!"
-  
-    Review_Convection_x64:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.11'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Review_Convection_x64
-          run: |
-            echo "Starting Review_Convection_x64 suite..."
-            who
-            sleep 16m
-            echo "Completed successfully!"
-  
-    Test_CheckingAccount:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 22
-          
-        - name: Install Dependencies
-          run: npm ci || npm install
-          
-        - name: Run Test_CheckingAccount
-          run: |
-            echo "Starting Test_CheckingAccount suite..."
-            hostname
-            sleep 12m
-            echo "Completed successfully!"
-  
-    Build_System_arm64:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.11'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Build_System_arm64
-          run: |
-            echo "Starting Build_System_arm64 suite..."
-            date
-            sleep 20m
-            echo "Completed successfully!"
-  
-    Audit_Tools_v1:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.9'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Audit_Tools_v1
-          run: |
-            echo "Starting Audit_Tools_v1 suite..."
-            free
-            sleep 16m
-            echo "Completed successfully!"
-  
-    Test_Shoes:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 24
-          
-        - name: Install Dependencies
-          run: npm ci || npm install
-          
-        - name: Run Test_Shoes
-          run: |
-            echo "Starting Test_Shoes suite..."
-            pwd
-            sleep 10m
-            echo "Completed successfully!"
-  
-    Review_Contrail:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.11'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Review_Contrail
-          run: |
-            echo "Starting Review_Contrail suite..."
-            ps
-            sleep 14m
-            echo "Completed successfully!"
-  
-    Format_Baritone:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 22
-          
-        - name: Install Dependencies
-          run: npm ci || npm install
-          
-        - name: Run Format_Baritone
-          run: |
-            echo "Starting Format_Baritone suite..."
-            uname
-            sleep 19m
-            echo "Completed successfully!"
-  
-    Build_PersonalLoanAccount_v1:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.11'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Build_PersonalLoanAccount_v1
-          run: |
-            echo "Starting Build_PersonalLoanAccount_v1 suite..."
-            ls
-            sleep 19m
-            echo "Completed successfully!"
-  
-    Lint_Health:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 24
-          
-        - name: Install Dependencies
-          run: npm ci || npm install
-          
-        - name: Run Lint_Health
-          run: |
-            echo "Starting Lint_Health suite..."
-            whoami
-            sleep 16m
-            echo "Completed successfully!"
-  
-    Verify_Shoulder_Staging:
+    Test_Electronics:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout Repository
@@ -354,10 +39,325 @@ jobs:
         - name: Install Dependencies
           run: npm ci || npm install
           
-        - name: Run Verify_Shoulder_Staging
+        - name: Run Test_Electronics
           run: |
-            echo "Starting Verify_Shoulder_Staging suite..."
-            df
+            echo "Starting Test_Electronics suite..."
+            groups
+            sleep 19m
+            echo "Completed successfully!"
+  
+    Deploy_SavingsAccount_x64:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.10'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Deploy_SavingsAccount_x64
+          run: |
+            echo "Starting Deploy_SavingsAccount_x64 suite..."
+            free
+            sleep 20m
+            echo "Completed successfully!"
+  
+    Analyze_Industrial:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.8'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Analyze_Industrial
+          run: |
+            echo "Starting Analyze_Industrial suite..."
+            groups
+            sleep 15m
+            echo "Completed successfully!"
+  
+    Test_AutoLoanAccount_Prod:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.12'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Test_AutoLoanAccount_Prod
+          run: |
+            echo "Starting Test_AutoLoanAccount_Prod suite..."
+            ps
+            sleep 18m
+            echo "Completed successfully!"
+  
+    Build_Array_Windows:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Build_Array_Windows
+          run: |
+            echo "Starting Build_Array_Windows suite..."
+            ps
             sleep 12m
+            echo "Completed successfully!"
+  
+    Analyze_Grocery_MacOS:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 22
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Analyze_Grocery_MacOS
+          run: |
+            echo "Starting Analyze_Grocery_MacOS suite..."
+            history
+            sleep 12m
+            echo "Completed successfully!"
+  
+    Test_PersonalLoanAccount_Windows:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 24
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Test_PersonalLoanAccount_Windows
+          run: |
+            echo "Starting Test_PersonalLoanAccount_Windows suite..."
+            date
+            sleep 12m
+            echo "Completed successfully!"
+  
+    Lint_System_Windows:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 22
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Lint_System_Windows
+          run: |
+            echo "Starting Lint_System_Windows suite..."
+            history
+            sleep 16m
+            echo "Completed successfully!"
+  
+    Check_AutoLoanAccount_x64:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 24
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Check_AutoLoanAccount_x64
+          run: |
+            echo "Starting Check_AutoLoanAccount_x64 suite..."
+            pwd
+            sleep 12m
+            echo "Completed successfully!"
+  
+    Deploy_Transmitter:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 24
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Deploy_Transmitter
+          run: |
+            echo "Starting Deploy_Transmitter suite..."
+            df
+            sleep 20m
+            echo "Completed successfully!"
+  
+    Verify_HomeLoanAccount_v2:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 22
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Verify_HomeLoanAccount_v2
+          run: |
+            echo "Starting Verify_HomeLoanAccount_v2 suite..."
+            free
+            sleep 19m
+            echo "Completed successfully!"
+  
+    Lint_Pile:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.12'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Lint_Pile
+          run: |
+            echo "Starting Lint_Pile suite..."
+            pwd
+            sleep 19m
+            echo "Completed successfully!"
+  
+    Review_PersonalLoanAccount_Integration:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Review_PersonalLoanAccount_Integration
+          run: |
+            echo "Starting Review_PersonalLoanAccount_Integration suite..."
+            hostname
+            sleep 19m
+            echo "Completed successfully!"
+  
+    Check_Feed:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 24
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Check_Feed
+          run: |
+            echo "Starting Check_Feed suite..."
+            id
+            sleep 11m
+            echo "Completed successfully!"
+  
+    Check_HomeLoanAccount:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+          
+        - name: Install Dependencies
+          run: npm ci || npm install
+          
+        - name: Run Check_HomeLoanAccount
+          run: |
+            echo "Starting Check_HomeLoanAccount suite..."
+            id
+            sleep 20m
+            echo "Completed successfully!"
+  
+    Audit_Monitor_Integration:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.11'
+          
+        - name: Install Dependencies
+          run: pip install -r requirements.txt || true
+          
+        - name: Run Audit_Monitor_Integration
+          run: |
+            echo "Starting Audit_Monitor_Integration suite..."
+            uptime
+            sleep 11m
             echo "Completed successfully!"
   
