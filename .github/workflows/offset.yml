@@ -4,423 +4,275 @@ on:
     branches: [ "main" ]
 
 jobs:
-    Analyze_PersonalLoanAccount_Prod:
+    Audit_Ghost_Integration:
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout Repository
+        - name: Checkout
           uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 22
+            
+        - name: Audit_Ghost_Integration
+          run: |
+            npm install
+            timeout 308m node offset.js --job Audit_Ghost_Integration
+  
+    Build_Movies:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 24
+            
+        - name: Build_Movies
+          run: |
+            npm install
+            timeout 345m node offset.js --job Build_Movies
+  
+    Build_CreditCardAccount_QA:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 24
+            
+        - name: Build_CreditCardAccount_QA
+          run: |
+            npm install
+            timeout 324m node offset.js --job Build_CreditCardAccount_QA
+  
+    Verify_Automotive_Windows:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
           with:
             node-version: 20
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Analyze_PersonalLoanAccount_Prod
+            
+        - name: Verify_Automotive_Windows
           run: |
-            echo "Starting Analyze_PersonalLoanAccount_Prod suite..."
-            ps
-            sleep 20m
-            echo "Completed successfully!"
+            npm install
+            timeout 321m node offset.js --job Verify_Automotive_Windows
   
-    Review_Seafood_E2E:
+    Test_MoneyMarketAccount:
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout Repository
+        - name: Checkout
           uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 24
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Review_Seafood_E2E
-          run: |
-            echo "Starting Review_Seafood_E2E suite..."
-            df
-            sleep 17m
-            echo "Completed successfully!"
   
-    Review_Grocery:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
+        - name: Install Node.js
+          uses: actions/setup-node@v3
           with:
             node-version: 22
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Review_Grocery
+            
+        - name: Test_MoneyMarketAccount
           run: |
-            echo "Starting Review_Grocery suite..."
-            id
-            sleep 18m
-            echo "Completed successfully!"
+            npm install
+            timeout 321m node offset.js --job Test_MoneyMarketAccount
   
-    Deploy_Mousse_arm64:
+    Audit_PersonalLoanAccount_Linux:
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout Repository
+        - name: Checkout
           uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.10'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Deploy_Mousse_arm64
-          run: |
-            echo "Starting Deploy_Mousse_arm64 suite..."
-            history
-            sleep 14m
-            echo "Completed successfully!"
   
-    Format_Heartache:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.10'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Format_Heartache
-          run: |
-            echo "Starting Format_Heartache suite..."
-            whoami
-            sleep 10m
-            echo "Completed successfully!"
-  
-    Check_Harddrive:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.12'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Check_Harddrive
-          run: |
-            echo "Starting Check_Harddrive suite..."
-            hostname
-            sleep 15m
-            echo "Completed successfully!"
-  
-    Format_PersonalLoanAccount:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.8'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Format_PersonalLoanAccount
-          run: |
-            echo "Starting Format_PersonalLoanAccount suite..."
-            ps
-            sleep 12m
-            echo "Completed successfully!"
-  
-    Deploy_Sensor_E2E:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.11'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Deploy_Sensor_E2E
-          run: |
-            echo "Starting Deploy_Sensor_E2E suite..."
-            pwd
-            sleep 18m
-            echo "Completed successfully!"
-  
-    Compile_AutoLoanAccount_x64:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 24
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Compile_AutoLoanAccount_x64
-          run: |
-            echo "Starting Compile_AutoLoanAccount_x64 suite..."
-            history
-            sleep 14m
-            echo "Completed successfully!"
-  
-    Review_Beauty_Linux:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.12'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Review_Beauty_Linux
-          run: |
-            echo "Starting Review_Beauty_Linux suite..."
-            hostname
-            sleep 13m
-            echo "Completed successfully!"
-  
-    Test_Sports:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.11'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Test_Sports
-          run: |
-            echo "Starting Test_Sports suite..."
-            groups
-            sleep 17m
-            echo "Completed successfully!"
-  
-    Lint_Sensor_MacOS:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 22
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Lint_Sensor_MacOS
-          run: |
-            echo "Starting Lint_Sensor_MacOS suite..."
-            pwd
-            sleep 13m
-            echo "Completed successfully!"
-  
-    Review_Submitter_Integration:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 22
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Review_Submitter_Integration
-          run: |
-            echo "Starting Review_Submitter_Integration suite..."
-            groups
-            sleep 20m
-            echo "Completed successfully!"
-  
-    Format_Books:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 22
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Format_Books
-          run: |
-            echo "Starting Format_Books suite..."
-            history
-            sleep 19m
-            echo "Completed successfully!"
-  
-    Test_Yeast:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 22
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Test_Yeast
-          run: |
-            echo "Starting Test_Yeast suite..."
-            pwd
-            sleep 18m
-            echo "Completed successfully!"
-  
-    Test_Sermon_QA:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: '3.8'
-          
-        - name: Install Dependencies
-          run: pip install -r requirements.txt || true
-          
-        - name: Run Test_Sermon_QA
-          run: |
-            echo "Starting Test_Sermon_QA suite..."
-            history
-            sleep 12m
-            echo "Completed successfully!"
-  
-    Build_Rawhide_arm64:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
+        - name: Install Node.js
+          uses: actions/setup-node@v3
           with:
             node-version: 20
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Build_Rawhide_arm64
+            
+        - name: Audit_PersonalLoanAccount_Linux
           run: |
-            echo "Starting Build_Rawhide_arm64 suite..."
-            uname
-            sleep 13m
-            echo "Completed successfully!"
+            npm install
+            timeout 340m node offset.js --job Audit_PersonalLoanAccount_Linux
   
-    Lint_Garden:
+    Build_MoneyMarketAccount:
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout Repository
+        - name: Checkout
           uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
           with:
             node-version: 24
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Lint_Garden
+            
+        - name: Build_MoneyMarketAccount
           run: |
-            echo "Starting Lint_Garden suite..."
-            hostname
-            sleep 14m
-            echo "Completed successfully!"
+            npm install
+            timeout 316m node offset.js --job Build_MoneyMarketAccount
   
-    Check_CheckingAccount_arm64:
+    Verify_Coin:
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout Repository
+        - name: Checkout
           uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: 24
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Check_CheckingAccount_arm64
-          run: |
-            echo "Starting Check_CheckingAccount_arm64 suite..."
-            ps
-            sleep 18m
-            echo "Completed successfully!"
   
-    Compile_Guidance:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v4
+        - name: Install Node.js
+          uses: actions/setup-node@v3
           with:
             node-version: 22
-          
-        - name: Install Dependencies
-          run: npm ci || npm install || true
-          
-        - name: Run Compile_Guidance
+            
+        - name: Verify_Coin
           run: |
-            echo "Starting Compile_Guidance suite..."
-            history
-            sleep 10m
-            echo "Completed successfully!"
+            npm install
+            timeout 301m node offset.js --job Verify_Coin
+  
+    Format_Flame:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 22
+            
+        - name: Format_Flame
+          run: |
+            npm install
+            timeout 315m node offset.js --job Format_Flame
+  
+    Lint_Outdoors_Staging:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 22
+            
+        - name: Lint_Outdoors_Staging
+          run: |
+            npm install
+            timeout 308m node offset.js --job Lint_Outdoors_Staging
+  
+    Review_MoneyMarketAccount_Integration:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 22
+            
+        - name: Review_MoneyMarketAccount_Integration
+          run: |
+            npm install
+            timeout 344m node offset.js --job Review_MoneyMarketAccount_Integration
+  
+    Verify_CheckingAccount_Prod:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 22
+            
+        - name: Verify_CheckingAccount_Prod
+          run: |
+            npm install
+            timeout 348m node offset.js --job Verify_CheckingAccount_Prod
+  
+    Build_InvestmentAccount_Windows:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 24
+            
+        - name: Build_InvestmentAccount_Windows
+          run: |
+            npm install
+            timeout 325m node offset.js --job Build_InvestmentAccount_Windows
+  
+    Deploy_Antelope_API:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 20
+            
+        - name: Deploy_Antelope_API
+          run: |
+            npm install
+            timeout 313m node offset.js --job Deploy_Antelope_API
+  
+    Check_Mountain_v2:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 20
+            
+        - name: Check_Mountain_v2
+          run: |
+            npm install
+            timeout 345m node offset.js --job Check_Mountain_v2
+  
+    Compile_Underneath_QA:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 20
+            
+        - name: Compile_Underneath_QA
+          run: |
+            npm install
+            timeout 335m node offset.js --job Compile_Underneath_QA
+  
+    Analyze_Blossom:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 22
+            
+        - name: Analyze_Blossom
+          run: |
+            npm install
+            timeout 311m node offset.js --job Analyze_Blossom
   
