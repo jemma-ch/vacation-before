@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-    Deploy_Tools:
+    Verify_Panel:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -15,12 +15,12 @@ jobs:
           with:
             node-version: 24
             
-        - name: Deploy_Tools
+        - name: Verify_Panel
           run: |
             npm install
-            timeout 196m node offset.js --job Deploy_Tools
+            timeout 189m node offset.js --job Verify_Panel
   
-    Analyze_MoneyMarketAccount:
+    Compile_MoneyMarketAccount_Windows:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -29,12 +29,28 @@ jobs:
         - name: Install Node.js
           uses: actions/setup-node@v3
           with:
-            node-version: 20
+            node-version: 22
             
-        - name: Analyze_MoneyMarketAccount
+        - name: Compile_MoneyMarketAccount_Windows
           run: |
             npm install
-            timeout 190m node offset.js --job Analyze_MoneyMarketAccount
+            timeout 208m node offset.js --job Compile_MoneyMarketAccount_Windows
+  
+    Check_Clothing:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 22
+            
+        - name: Check_Clothing
+          run: |
+            npm install
+            timeout 207m node offset.js --job Check_Clothing
   
     Audit_PersonalLoanAccount:
       runs-on: ubuntu-latest
@@ -50,9 +66,9 @@ jobs:
         - name: Audit_PersonalLoanAccount
           run: |
             npm install
-            timeout 181m node offset.js --job Audit_PersonalLoanAccount
+            timeout 202m node offset.js --job Audit_PersonalLoanAccount
   
-    Lint_PersonalLoanAccount:
+    Compile_Utilization:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -63,44 +79,12 @@ jobs:
           with:
             node-version: 22
             
-        - name: Lint_PersonalLoanAccount
+        - name: Compile_Utilization
           run: |
             npm install
-            timeout 214m node offset.js --job Lint_PersonalLoanAccount
+            timeout 184m node offset.js --job Compile_Utilization
   
-    Audit_InvestmentAccount:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-  
-        - name: Install Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: 24
-            
-        - name: Audit_InvestmentAccount
-          run: |
-            npm install
-            timeout 206m node offset.js --job Audit_InvestmentAccount
-  
-    Lint_Configuration_Integration:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-  
-        - name: Install Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: 24
-            
-        - name: Lint_Configuration_Integration
-          run: |
-            npm install
-            timeout 182m node offset.js --job Lint_Configuration_Integration
-  
-    Verify_Peony_Web:
+    Build_Electronics_x64:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -111,76 +95,12 @@ jobs:
           with:
             node-version: 20
             
-        - name: Verify_Peony_Web
+        - name: Build_Electronics_x64
           run: |
             npm install
-            timeout 226m node offset.js --job Verify_Peony_Web
+            timeout 191m node offset.js --job Build_Electronics_x64
   
-    Verify_Health:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-  
-        - name: Install Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: 24
-            
-        - name: Verify_Health
-          run: |
-            npm install
-            timeout 226m node offset.js --job Verify_Health
-  
-    Deploy_PersonalLoanAccount:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-  
-        - name: Install Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: 20
-            
-        - name: Deploy_PersonalLoanAccount
-          run: |
-            npm install
-            timeout 191m node offset.js --job Deploy_PersonalLoanAccount
-  
-    Check_Rim:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-  
-        - name: Install Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: 24
-            
-        - name: Check_Rim
-          run: |
-            npm install
-            timeout 203m node offset.js --job Check_Rim
-  
-    Review_Alarm_API:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-  
-        - name: Install Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: 20
-            
-        - name: Review_Alarm_API
-          run: |
-            npm install
-            timeout 210m node offset.js --job Review_Alarm_API
-  
-    Test_MoneyMarketAccount_x64:
+    Review_Sensor:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -191,12 +111,12 @@ jobs:
           with:
             node-version: 22
             
-        - name: Test_MoneyMarketAccount_x64
+        - name: Review_Sensor
           run: |
             npm install
-            timeout 201m node offset.js --job Test_MoneyMarketAccount_x64
+            timeout 201m node offset.js --job Review_Sensor
   
-    Format_InvestmentAccount_E2E:
+    Analyze_Automotive_QA:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -207,12 +127,44 @@ jobs:
           with:
             node-version: 22
             
-        - name: Format_InvestmentAccount_E2E
+        - name: Analyze_Automotive_QA
           run: |
             npm install
-            timeout 220m node offset.js --job Format_InvestmentAccount_E2E
+            timeout 216m node offset.js --job Analyze_Automotive_QA
   
-    Audit_Bus:
+    Check_Selfconfidence_Integration:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 22
+            
+        - name: Check_Selfconfidence_Integration
+          run: |
+            npm install
+            timeout 208m node offset.js --job Check_Selfconfidence_Integration
+  
+    Deploy_Tool_Windows:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 22
+            
+        - name: Deploy_Tool_Windows
+          run: |
+            npm install
+            timeout 204m node offset.js --job Deploy_Tool_Windows
+  
+    Review_Transmitter:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -223,12 +175,60 @@ jobs:
           with:
             node-version: 20
             
-        - name: Audit_Bus
+        - name: Review_Transmitter
           run: |
             npm install
-            timeout 182m node offset.js --job Audit_Bus
+            timeout 183m node offset.js --job Review_Transmitter
   
-    Analyze_Card:
+    Lint_Bus_v1:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 20
+            
+        - name: Lint_Bus_v1
+          run: |
+            npm install
+            timeout 220m node offset.js --job Lint_Bus_v1
+  
+    Compile_Sensor:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 20
+            
+        - name: Compile_Sensor
+          run: |
+            npm install
+            timeout 187m node offset.js --job Compile_Sensor
+  
+    Check_Monitor_E2E:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: Install Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 20
+            
+        - name: Check_Monitor_E2E
+          run: |
+            npm install
+            timeout 193m node offset.js --job Check_Monitor_E2E
+  
+    Review_Feed:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -239,12 +239,12 @@ jobs:
           with:
             node-version: 24
             
-        - name: Analyze_Card
+        - name: Review_Feed
           run: |
             npm install
-            timeout 214m node offset.js --job Analyze_Card
+            timeout 197m node offset.js --job Review_Feed
   
-    Build_Matrix:
+    Build_Ribbon:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -255,40 +255,8 @@ jobs:
           with:
             node-version: 20
             
-        - name: Build_Matrix
+        - name: Build_Ribbon
           run: |
             npm install
-            timeout 226m node offset.js --job Build_Matrix
-  
-    Test_Clothing:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-  
-        - name: Install Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: 20
-            
-        - name: Test_Clothing
-          run: |
-            npm install
-            timeout 193m node offset.js --job Test_Clothing
-  
-    Format_Onset:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-  
-        - name: Install Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: 24
-            
-        - name: Format_Onset
-          run: |
-            npm install
-            timeout 220m node offset.js --job Format_Onset
+            timeout 182m node offset.js --job Build_Ribbon
   
